@@ -20,7 +20,7 @@ session_start();
     
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
    </head>
-   <title>Home Page</title>
+   <title>Results Page</title>
    <style>
 
 
@@ -162,12 +162,43 @@ session_start();
 .sidebar li a{
   display: flex;
   height: 100%;
+  width: 50%;
+  border-radius: 12px;
+  align-items: center;
+  text-decoration: none;
+  transition: all 0.4s ease;
+  background: #11101D;
+}
+.sidebar li a1{
+  display: flex;
+  height: 100%;
   width: 100%;
   border-radius: 12px;
   align-items: center;
   text-decoration: none;
   transition: all 0.4s ease;
   background: #11101D;
+}
+.sidebar li a1:hover{
+  background: #FFF;
+}
+.sidebar li a1 .links_name{
+  color: #fff;
+  font-size: 15px;
+  font-weight: 400;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.4s;
+}
+.sidebar.open li a1 .links_name{
+  opacity: 1;
+  pointer-events: auto;
+}
+.sidebar li a1:hover .links_name,
+.sidebar li a1:hover i{
+  transition: all 0.5s ease;
+  color: #11101D;
 }
 .sidebar li a:hover{
   background: #FFF;
@@ -278,22 +309,41 @@ session_start();
     display: none;
   }
 }
-  img.center{
-          padding: 20px;
-        	display: block;
-			    top: 10px;
-       	  margin: 0 auto;
-			    line-height:0;
-		    	vertical-align: top;
- 	   }
-      img:hover {
-  width: 400px;
-  height: 400px;
- 
-  animation-duration: 5s;
-  animation-timing-function: linear;
-  animation-delay: 2s;
+  
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+
 }
+
+.dropdown-content {
+  display: none;
+  position: relative;
+  background-color: #11101D;
+  min-width: 150px;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: white;
+  font-weight:300px;
+  padding: 10px;
+  text-decoration: none;
+  display: inline;
+}
+
+.dropdown-content a:hover {
+  color: black;
+  font-weight:300px;
+  
+}
+
+.dropdown-content a:hover {background-color: #11101D;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color:#11101D;}
    </style>
 <body>
   <div class="sidebar">
@@ -308,60 +358,75 @@ session_start();
          <input type="text" placeholder="Search...">
          <span class="tooltip">Search</span>
       </li>
-      <li>
-        <a href="students.php">
-          <i class='bx bx-grid-alt'></i>
-          <span class="links_name">Dashboard</span>
-        </a>
-         <span class="tooltip">Dashboard</span>
-      </li>
-      <li>
-       <a href="res.php">
-         <i class='bx bx-credit-card' ></i>
-         <span class="links_name">Results</span>
-       </a>
-       <span class="tooltip">Results</span>
-     </li>
-     <li>
+      <div class="dropdown"><li>
+        
+      <a> <i class='bx bx-dice-1'></i> <span class="links_name">1st Year</span></a>     
+         
+          <div class="dropdown-content">
+            <a href="result/totalresults1_1.php">Sem 1</a>
+            <a href="result/totalresults1_2.php">Sem 2</a>
+  </div>
+         <span class="tooltip">1st Year</span>
+      </li></div>
+      <div class="dropdown"><li>
        <a href="#">
-         <i class='bx bx-chat' ></i>
-         <span class="links_name">Help</span>
+         <i class='bx bx-dice-2' ></i>
+         <span class="links_name">2nd Year</span>
        </a>
-       <span class="tooltip">Help</span>
-     </li>
-     <li>
-       <a href="about.php">
-         <i class='bx bx-pie-chart-alt-2' ></i>
-         <span class="links_name">About</span>
+       <div class="dropdown-content">
+           <a href="result/totalresults2_1.php">Sem 1</a>
+            <a href="result/totalresults2_2.php">Sem 2</a>
+  </div>
+       <span class="tooltip">2nd Year</span>
+     </li></div>
+     <div class="dropdown"><li>
+       <a href="#">
+         <i class='bx bx-dice-3' ></i>
+         <span class="links_name">3rd Year</span>
        </a>
-       <span class="tooltip">About</span>
-     </li>
-     <li>
+       <div class="dropdown-content">
+            <a href="result/totalresults3_1.php">Sem 1</a>
+            <a href="result/totalresults3_2.php">Sem 2</a>
+  </div>
+       <span class="tooltip">3rd Year</span>
+     </li></div>
+     <div class="dropdown"><li>
+       <a href="#">
+         <i class='bx bx-dice-4' ></i>
+         <span class="links_name">4th Year</span>
+       </a>
+       <div class="dropdown-content">
+            <a href="result/totalresults4_1.php">Sem 1</a>
+            <a href="result/totalresults4_2.php">Sem 2</a>
+  </div>
+       <span class="tooltip">4th Year</span>
+     </li></div>
+    <li>
        <a href="settings.php">
-         <i class='bx bx-cog' ></i>
-         <span class="links_name">Setting</span>
+         <i class='bx bx-bar-chart-alt' ></i>
+         <span class="links_name">Final</span>
        </a>
-       <span class="tooltip">Setting</span>
+       <span class="tooltip">Final</span>
      </li>
      <li class="profile">
-     <a href="profile.php">
+     <a1 href="profile.php">
          <i class='bx bx-user' ></i>
          <span class="links_name"><?php echo $user_data['name']; ?></span>
-       </a>
+       </a1>
        <span class="tooltip"><?php echo $user_data['name']; ?></span>   
          <li>
-         <a href="logout.php">
+         <a href="dashboard.php">
          <i class='bx bx-log-out' ></i>
-         <span class="links_name">logout</span>
+         <span class="links_name">Back</span>
        </a>
-       <span class="tooltip">logout</span>
+       <span class="tooltip">Back</span>
      </li>
     </ul>
   </div>
   <section class="home-section">
   
-      <div class="text"><i class='bx bx-home' ></i>ome Page</div>
-      <img class="center" src="media\newlogo.gif" width="350">
+      <div class="text">Result's Page</div>
+      
       
   </section>
   <script>

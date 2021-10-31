@@ -1,6 +1,4 @@
 <?php 
-
-
 session_start();
 
 	include("connection.php");
@@ -8,38 +6,56 @@ session_start();
 
 	$user_data = check_login($con);
 
-    $sql="select * from faculty";
+   
+	if($_SERVER['REQUEST_METHOD'] == "POST")
+	{
+		//something was posted
+        $user_name = $_POST['user_name'];
+        $surname = $_POST['surname'];
+		$t_id = $_POST['t_id'];
+		$ph_no = $_POST['ph_no'];
+        $experience = $_POST['experience'];
+        $add_details = $_POST['add_details'];
+        $dept = $_POST['dept'];
+        $education = $_POST['education'];
 
-    $result= $con->query($sql);
+		if(!empty($surname) && !empty($dept) && !empty($education) && !empty($t_id) && !empty($ph_no) && !empty($ph_no) && !is_numeric($add_details))
+		{
 
-    
-        
-       
+			//save to database
+			
+			$query = "insert into faculty (user_name,surname,t_id,ph_no,experience,add_details,dept,education) values ('$user_name','$surname','$t_id','$ph_no','$experience','$add_details','$dept','$education')";
+            
+			mysqli_query($con, $query);
 
+		}else
+		{
+			echo "Please enter some valid information!";
+		}
+	}
 ?>
 <!doctype html>
 <html>
     <head>
         <meta charset='utf-8'>
         <meta name='viewport' content='width=device-width, initial-scale=1'>
-        <title>profile</title>
+        <title>Settings</title>
         <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css' rel='stylesheet'>
         <link href='' rel='stylesheet'>
         <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
 <style>
 body {
-    background: #2d3436;
-  	background-image: linear-gradient(315deg, #2d3436 0%, #d3d3d3 74%);
+    
+  	background-image: url("media/bgpopup.jpeg") ;
 }
  .row{
     border-collapse: collapse;
     
  }
- 
- 
+
 input[type="submit1"] {
   margin-top: 20px;
-  width: 220px;
+  width: 150px;
   height: 32px;
   background: #16a085;
   border: none;
@@ -49,6 +65,7 @@ input[type="submit1"] {
   color: #FFF;
   font-family: 'times new roman';
   font-weight: 700;
+  font-size:12px;
   text-transform: uppercase;
   transition: 0.1s ease;
   cursor: pointer;
@@ -98,7 +115,7 @@ input[type="submit1"]:active {
 }
 
 .labels {
-    font-size: 11px
+    font-size: 11px;
 }
 
 .add-experience:hover {
@@ -126,10 +143,6 @@ span{
     font-weight: 600;
     font-size: 15px;
     color: white;
-   
-}
-a{
-    text-decoration: none;
 }
 
 h4{
@@ -137,6 +150,8 @@ h4{
     font-weight: 600;
     font-size: 24px;
     color: white;
+    animation-duration: 8s;
+    animation-name: slidein;
 }
 
 .form-control{
@@ -149,82 +164,72 @@ h4{
 .container{
     margin-top: 50px;
 	margin-bottom: 50px;
-	width: 75%;
+	width: 60%;
 	background-color: #000000;
     background-image: linear-gradient(147deg, #000000 0%, #434343 74%);
 	overflow: auto;
 	border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 	transition: 0.5s;
+    
 }
 
 
-#log{  
-    		width: 140px;  
-    		height: 25px;  
-    		border: none; 
-    		background-color: white;
-			border-radius: 17px;  
-			padding-left: 7px;  
-    		color: black;
-    		font-family: times new roman;
-    		font-weight: bold; 
-   		 }
-
-            #log1{  
-    		width: 300px;  
-    		height: 25px;  
-    		border: none; 
-    		background-color: white;
-			border-radius: 17px;  
-			padding-left: 7px;  
-    		color: black;
-    		font-family: times new roman;
-    		font-weight: bold; 
-   		 }
-
-            #log2{  
-    		width: 200px;  
-    		height: 25px;  
-    		border: none; 
-    		background-color: white;
-			border-radius: 17px;  
-			padding-left: 7px;  
-    		color: black;
-    		font-family: times new roman;
-    		font-weight: bold; 
-   		 }
-
-            #log3{  
-    		width: 250px;  
-    		height: 25px;  
-    		border: none; 
-    		background-color: white;
-			border-radius: 17px;  
-			padding-left: 7px;  
-    		color: black;
-    		font-family: times new roman;
-    		font-weight: bold; 
-   		 }
+input[type="text"]:focus,
+input[type="password"]:focus {
+  border-bottom: 2px solid #16a085;
+  color: #16a085;
+  transition: 0.2s ease;
 }
+
+
+input[type="submit"] {
+  margin-top: 20px;
+  width: 150px;
+  height: 32px;
+  background: #16a085;
+  border: none;
+  border-radius: 17px;  
+  padding-left: 7px;  
+  color: #FFF;
+  font-family: 'times new roman';
+  font-weight: 700;
+  font-size: 12px;
+  text-transform: uppercase;
+  transition: 0.1s ease;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover,
+input[type="submit"]:focus {
+  opacity: 0.8;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  transition: 0.1s ease;
+}
+
+input[type="submit"]:active {
+  opacity: 1;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  transition: 0.1s ease;
+}
+
 }
 </style>
 </head>
 <body oncontextmenu='return false' class='snippet-body'>
 <div class="container">
+<form action="dashboard.php" method="post">
     <div class="row">
-        <div class="col-md-3 border-right">
-            <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"><span class="font-weight-bold"><?php echo $user_data['name']; ?></span><span class="text-white-25"><?php echo $user_data['email_id']; ?></span><span> </span></div>
-        </div>
-        <div class="col-md-5 border-right">
-            <div class="p-5 py-4">
+      
+        <div class="col-md-6">
+            <div class="p-3 py-5">
                
                 <div class="d-flex justify-content-between align-items-center mb-3">
-                    <h4 class="text-right">Profile</h4><a href="settings.php"><span class="border px-3 p-1 add-experience"><i class="fa fa-plus"></i>&nbsp;Edit</span></a>
+                    <h4 class="text-right">COMPLETE YOUR PROFILE!</h4>
                 </div>
                 <div class="row mt-2">
-                    <div class="col-md-6"><label class="labels">Name</label><input id="log" type="submit" class="form-control" placeholder="first name" value="<?php echo $user_data['name']; ?>"></div>
-                    <div class="col-md-6"><label class="labels">Surname</label><input  id="log" type="submit" class="form-control" value="<?php 
+                    <div class="col-md-6"><label class="labels">Name</label><input type="text" class="form-control" placeholder="first name" value="<?php echo $user_data['name']; ?>"></div>
+                    <div class="col-md-6"><label class="labels">Surname</label><input type="text" class="form-control" name="surname" placeholder="surname" value="<?php 
                         $sql="select * from faculty";
                         $result= $con->query($sql);
                         if ($result->num_rows > 0) {  
@@ -238,8 +243,8 @@ h4{
                         } ?>"></div>
                 </div>
                 <div class="row mt-3">
-                     <div class="col-md-12"><label class="labels">Username</label><input  id="log1" type="submit" class="form-control" value="<?php echo $user_data['user_name']; ?>"></div>
-                    <div class="col-md-12"><label class="labels">Mobile Number</label><input  id="log1" type="submit" class="form-control" placeholder="enter phone number" value="<?php 
+                    <div class="col-md-12"><label class="labels">Username</label><input type="text" class="form-control" placeholder="enter user name" name="user_name"></div>
+                    <div class="col-md-12"><label class="labels">Mobile Number</label><input type="text" class="form-control" placeholder="enter phone number" name="ph_no" value="<?php 
                      $sql="select * from faculty";
                      $result= $con->query($sql);
                      if ($result->num_rows > 0) {
@@ -253,7 +258,7 @@ h4{
                          echo "0 results";
                      }
                     ?>"></div>
-                    <div class="col-md-12"><label class="labels">Teacher id</label><input id="log1" type="submit" class="form-control" placeholder="enter address line 1" value="<?php 
+                    <div class="col-md-12"><label class="labels">Teacher id</label><input type="text" class="form-control" placeholder="Teacher id" name="t_id" value="<?php 
                      $sql="select * from faculty";
                      $result= $con->query($sql);
                      if ($result->num_rows > 0) {
@@ -267,25 +272,17 @@ h4{
                          echo "0 results";
                      }
                     ?>"></div>
+                    <div class="col-md-12"><label class="labels">Email ID</label><input type="text" class="form-control" placeholder="enter email id" value="<?php echo $user_data['email_id']; ?>"></div>
+                   
                     
-                    <div class="col-md-12"><label class="labels">Email ID</label><input id="log1" type="submit" class="form-control" placeholder="enter email id" value="<?php echo $user_data['email_id']; ?>"></div>
-                    <div class="col-md-12"><label class="labels">Education</label><input id="log1" type="submit" class="form-control" placeholder="education" value="<?php 
-                     $sql="select * from faculty";
-                     $result= $con->query($sql);
-                     if ($result->num_rows > 0) {
-                        
-                         while($row = $result->fetch_assoc()) {
-                            if($row["user_name"] == $user_data['user_name']){
-                         echo "". $row["education"]."";
-                         }
-                        }
-                     } else {
-                         echo "0 results";
-                     }
-                    ?>"></div>
                 </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="p-3 py-5">
+                <div class="d-flex justify-content-between align-items-center experience"><span>Edit Experience</span></div><br>
                 <div class="row mt-3">
-                    <div class="col-md-6"><label class="labels">Department</label><input id="log" type="submit" class="form-control" placeholder="country" value="<?php 
+                <div class="col-md-6"><label class="labels">Department</label><input type="text" class="form-control" placeholder="department" name="dept" value="<?php 
                      $sql="select * from faculty";
                      $result= $con->query($sql);
                      if ($result->num_rows > 0) {
@@ -299,15 +296,21 @@ h4{
                          echo "0 results";
                      }
                     ?>"></div>
-
-                </div>
-                
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="p-4 py-4">
-                <div class="d-flex justify-content-between align-items-center experience"><span class="border px-3 p-1 add-experience"><i class="fa fa-plus"></i>&nbsp;Experience</span></div><br>
-                <div class="col-md-12"><label class="labels">Experience</label><input id="log2" type="submit" class="form-control" placeholder="experience" value="<?php  
+                    <div class="col-md-12"><label class="labels">Education</label><input type="text" class="form-control" placeholder="education" name="education"  value="<?php 
+                     $sql="select * from faculty";
+                     $result= $con->query($sql);
+                     if ($result->num_rows > 0) {
+                        
+                         while($row = $result->fetch_assoc()) {
+                            if($row["user_name"] == $user_data['user_name']){
+                         echo "". $row["education"]."";
+                         }
+                        }
+                     } else {
+                         echo "0 results";
+                     }
+                    ?>"></div>
+                    <div class="col-md-12"><label class="labels">Experience</label><input type="text" class="form-control" placeholder="experience" name="experience" value="<?php  
                         $sql="select * from faculty";
                         $result= $con->query($sql);
                         if ($result->num_rows > 0) {
@@ -319,9 +322,9 @@ h4{
                         }
                         } else {
                             echo "0 results";
-                        } ?>"></div><br>
-                     
-                <div class="col-md-12"><label class="labels">Additional Details</label><input id="log3" type="submit" class="form-control" placeholder="additional details" value="<?php 
+                        } ?>"></div> <br>
+                    
+                <div class="col-md-12"><label class="labels">Additional Details</label><input type="text" class="form-control" placeholder="additional details" name="add_details" value="<?php 
                  $sql="select * from faculty";
                  $result= $con->query($sql);
                  if ($result->num_rows > 0) {
@@ -335,7 +338,10 @@ h4{
                      echo "0 results";
                  }
                 ?>"></div>
-               <a href="dashboard.php"><input type="submit1" value="Back to Homepage"><br><br></a>
+                <div class="row mt-3">
+                <div class="col-md-6"><input type="submit" value="Save and Next"></div>
+                <div class="col-md-6"><a href="dashboard.php"><input type="submit1" value="IGNORE"></a></div>
+                </div>
             </div>
         </div>
                 </div>
@@ -343,8 +349,9 @@ h4{
     </div>
 </div>
 </div>
+</form>
 </div>
-<script type='text/javascript' src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js'></script>
-<script type='text/javascript'></script>
-</body>
-</html>
+            <script type='text/javascript' src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js'></script>
+            <script type='text/javascript'></script>
+            </body>
+        </html>

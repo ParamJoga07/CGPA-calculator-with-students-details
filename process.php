@@ -9,20 +9,22 @@ session_start();
 	if($_SERVER['REQUEST_METHOD'] == "POST")
 	{
 		//something was posted
+	$rid = $_POST['rid'];
 	$s_name = $_POST['s_name'];
 	$s_enroll_no = $_POST['s_enroll_no'];
 	$s_department = $_POST['s_department'];
 	$s_year = $_POST['s_year'];
 	$s_semester = $_POST['s_semester'];
 	$s_email_id = $_POST['s_email_id'];
+	$GPA = $_POST['GPA'];
 
 
 	if(!empty($s_name) && !empty($s_enroll_no) && !empty($s_department) && !empty($s_year) && !empty($s_semester) && !empty($s_email_id) && !is_numeric($s_name))
 	{
 
 		//save to database
-		
-		$query = "insert into students (s_name,s_enroll_no,s_department,s_year,s_semester,s_email_id) values ('$s_name','$s_enroll_no','$s_department','$s_year','$s_semester','$s_email_id')";
+		$rid = random_num(20);
+		$query = "insert into results (rid,s_name,s_enroll_no,s_department,s_year,s_semester,s_email_id,GPA) values ('$rid','$s_name','$s_enroll_no','$s_department','$s_year','$s_semester','$s_email_id','$GPA')";
 
 		mysqli_query($con, $query);
 	}else
@@ -126,18 +128,20 @@ session_start();
 							<th><h1>RESULT</h1></th>
 						</thead>
 						<tbody>
-							<?php
-								if (isset($_POST['btn'])) {
-									$s_name = $_POST['s_name'];
-									$s_enroll_no = $_POST['s_enroll_no'];
-									$s_department = $_POST['s_department'];
-									$s_year = $_POST['s_year'];
-									$s_semester = $_POST['s_semester'];
-									$s_email_id = $_POST['s_email_id'];
-								}
-							?>
+							
 							<tr>
-								<td><br>STUDENT NAME: <strong><?php echo $s_name; ?></strong></td>
+								<td><br>STUDENT NAME: <strong><?php 
+                        $sql="select * from students";
+                        $result= $con->query($sql);
+                        if ($result->num_rows > 0) {  
+                            while($row = $result->fetch_assoc()) {
+                               
+                                    echo "". $row["s_name"]."";
+                                 
+                            }
+                        } else {
+                            echo "0 results";
+                        } ?></strong></td>
 							</tr>
 							<tr>
 								<td>STUDENT ENROLL NUMBER: <strong><?php echo $s_enroll_no; ?></strong></td>

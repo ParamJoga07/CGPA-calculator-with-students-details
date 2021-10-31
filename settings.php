@@ -14,28 +14,23 @@ session_start();
         $surname = $_POST['surname'];
 		$t_id = $_POST['t_id'];
 		$ph_no = $_POST['ph_no'];
-        $addline1 = $_POST['addline1'];
-        $pincode = $_POST['pincode'];
-        $state = $_POST['state'];
-        $area = $_POST['area'];
         $experience = $_POST['experience'];
         $add_details = $_POST['add_details'];
         $dept = $_POST['dept'];
         $education = $_POST['education'];
-        $district = $_POST['district'];
 
-		if(!empty($surname) && !empty($dept) && !empty($education) && !empty($t_id) && !empty($ph_no) && !empty($addline1) && !is_numeric($add_details))
+		if(!empty($surname) && !empty($dept) && !empty($education) && !empty($t_id) && !empty($ph_no) && !empty($ph_no) && !is_numeric($add_details))
 		{
 
 			//save to database
 			
-			$query = "insert into faculty (user_name,surname,t_id,ph_no,addline1,pincode,state,area,experience,add_details,dept,education,district) values ('$user_name','$surname','$t_id','$ph_no','$addline1','$pincode','$state','$area','$experience','$add_details','$dept','$education','$district')";
+			$query = "insert into faculty (user_name,surname,t_id,ph_no,experience,add_details,dept,education) values ('$user_name','$surname','$t_id','$ph_no','$experience','$add_details','$dept','$education')";
             
 			mysqli_query($con, $query);
 
 		}else
 		{
-			echo "Please enter some valid information!";
+			echo "Please fill all the colomns";
 		}
 	}
 ?>
@@ -223,7 +218,7 @@ input[type="submit"]:active {
 </head>
 <body oncontextmenu='return false' class='snippet-body'>
 <div class="container">
-<form  action="profile.php" method="post">
+<form method="post">
     <div class="row">
       
         <div class="col-md-6">
