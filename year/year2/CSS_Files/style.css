@@ -1,0 +1,110 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #2d3436;
+  background-image: linear-gradient(315deg, #2d3436 0%, #d3d3d3 74%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  font-size: 16px;
+  color: #222;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+}
+nav{
+  height: auto;
+  width: 100%;
+	background-color: #000000;
+  background-image: linear-gradient(147deg, #000000 0%, #434343 74%);
+	display: flex;
+  position: fixed;
+  box-sizing: border-box;
+  margin: 0;
+  z-index: 100;
+  transition: 0.5s;
+}
+h1{
+  font: size 10px;
+  font-family: 'Times New Roman';
+  text-align:center;
+  
+  
+  margin-top: 0px;
+}
+
+.left {
+  position: relative;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  padding: 0px;
+  width: 400px;
+  height: 200px;
+}
+.avatar {
+  vertical-align: middle;
+  width: 50px;
+  height: 50px;
+  border-radius: 100px;
+}
+tr,td,th{
+	border: 0;
+}
+
+/*FFOTER*/
+
+footer{
+  text-align:center;
+  font-size:22px;
+  background: black;
+  color:white;
+  display: flex;
+  justify-content: center;
+  font-family:Apple-Chancery;
+  width:100%;
+  height:auto;
+  margin: 0;
+  margin-top:100px;
+}
+#log{  
+	width: 120px;  
+	height: 30px;  
+	border: none; 
+	background-color: #2d3436;
+  background-image: linear-gradient(315deg, #2d3436 0%, #d3d3d3 74%);
+	border-radius: 17px;  
+	padding-left: 7px;  
+	color:black;
+	font-family: times new roman;
+	font-weight: bold; 
+	}
+
+	input[type="submit"] {
+		margin-top: 15px;
+		width: 240px;
+		height: 32px;
+    background-color: #2d3436;
+    background-image: linear-gradient(315deg, #2d3436 0%, #d3d3d3 74%);
+		border: none;
+		border-radius: 17px;  
+		padding-left: 7px;  
+		color:black;
+		font-family: 'times new roman';
+		font-weight: 700;
+		text-transform: uppercase;
+		transition: 0.1s ease;
+		cursor: pointer;
+	  }
+	  
+	  input[type="submit"]:hover,
+	  input[type="submit"]:focus {
+		opacity: 0.8;
+		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+		transition: 0.1s ease;
+	  }
+	  
+	  input[type="submit"]:active {
+		opacity: 1;
+		box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+		transition: 0.1s ease;
+	  }

@@ -344,6 +344,17 @@ session_start();
 .dropdown:hover .dropdown-content {display: block;}
 
 .dropdown:hover .dropbtn {background-color:#11101D;}
+
+img.center{
+          padding: 20px;
+        	display: block;
+			    top: 10px;
+       	  margin: 0 auto;
+			    line-height:0;
+		    	vertical-align: top;
+ 	   }
+      
+   </style>
    </style>
 <body>
   <div class="sidebar">
@@ -402,7 +413,7 @@ session_start();
        <span class="tooltip">4th Year</span>
      </li></div>
     <li>
-       <a href="settings.php">
+       <a href="result/finalresults.php">
          <i class='bx bx-bar-chart-alt' ></i>
          <span class="links_name">Final</span>
        </a>
@@ -426,7 +437,7 @@ session_start();
   <section class="home-section">
   
       <div class="text">Result's Page</div>
-      
+      <img class="center" src="https://crestcom.com/wp-content/uploads/sites/4/2019/06/AdobeStock_102031676_300px.jpg" width="600">
       
   </section>
   <script>

@@ -12,6 +12,23 @@ session_start();
 
     $result= $con->query($sql);
 
+    if (isset($_REQUEST['updateStuNameBtn'])) {
+		if (($_REQUEST['stuName'] == "")) {
+        }
+        else{
+			$stu_image =$_FILES['facImg']['name'];
+			$stu_image_temp =$_FILES['facImg']['tmp_name'];
+			$img_folder = '../images/stu/'.$fac_image;
+			move_uploaded_file($fac_image_temp ,$img_folder);
+			$sql = "UPDATE faculty SET fac_img ='$img_folder' WHERE stu_email='$stuEmail'  ";
+			if ($conn -> query($sql) == TRUE) {
+				$passmsg = '<div class ="alert alert-success col-sm-6 ml-5 mt-2">Updated Succesfully</div>';
+			}
+			else{
+				$passmsg = '<div class ="alert alert-danger col-sm-6 ml-5 mt-2">Unable to Update </div>'	;
+			}
+		}
+	}
     
         
        
@@ -215,6 +232,7 @@ h4{
     <div class="row">
         <div class="col-md-3 border-right">
             <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"><span class="font-weight-bold"><?php echo $user_data['name']; ?></span><span class="text-white-25"><?php echo $user_data['email_id']; ?></span><span> </span></div>
+           
         </div>
         <div class="col-md-5 border-right">
             <div class="p-5 py-4">

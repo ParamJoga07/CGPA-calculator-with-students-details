@@ -6,7 +6,7 @@ session_start();
 
 	$user_data = check_login($con);
 
-   
+    
 	if($_SERVER['REQUEST_METHOD'] == "POST")
 	{
 		//something was posted
@@ -33,6 +33,7 @@ session_start();
 			echo "Please fill all the colomns";
 		}
 	}
+    
 ?>
 <!doctype html>
 <html>
@@ -119,6 +120,8 @@ input[type="submit1"]:active {
 
 .labels {
     font-size: 11px;
+    margin-bottom:5px;
+    margin-top:5px;
 }
 
 .add-experience:hover {
@@ -243,7 +246,6 @@ input[type="submit"]:active {
         </div>
         <div class="col-md-6">
             <div class="p-3 py-5">
-                <div class="d-flex justify-content-between align-items-center experience"><span>Edit Experience</span></div><br>
                 <div class="row mt-3">
                 <div class="col-md-6"><label class="labels">Department</label><input type="text" class="form-control" placeholder="department" name="dept"></div>
                     <div class="col-md-12"><label class="labels">Education</label><input type="text" class="form-control" placeholder="education" name="education"></div>

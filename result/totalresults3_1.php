@@ -41,15 +41,16 @@ body {
 
 
 
-h1 {
+h2 {
   font-family: 'times new roman';
   margin: 0 0 0px 0;
-  font-weight: 300;
-  font-size: 28px;
+  font-weight: 800;
+  font-size: 22px;
+  margin-top: 15px;
   text-align: center;
-  color: white;
+  color: black;
+  margin-bottom: 10px;
 }
-
 
     table {
   font-family: 'times new roman';
@@ -103,7 +104,7 @@ input[type="submit1"]:active {
           </style>
 <body>
 
-<h2>RESULTS Table</h2>
+<center><h2>RESULT'S OF 3<sup>rd</sup> YEAR 1<sup>st</sup> SEMESTER</h2></center>
 
 <center><table>
 <thead>
@@ -115,7 +116,7 @@ input[type="submit1"]:active {
     <th>department</th>
     <th>gpa</th>
 </thead>
-  <tr>
+  <tr>   
     <th>
         <?php 
                  $c=1;
@@ -216,6 +217,6 @@ input[type="submit1"]:active {
 
 <br><br><br>
 <center><label><input type="submit1" value="PRINT" onclick="window.print()"></label></center>
-<center><a href="dashboard.php"><input type="submit1" value="Back to Homepage"><br><br></a></center>
+<center><a href="/login/dashboard.php"><input type="submit1" value="Back to Homepage"><br><br></a></center>
 </body>
 </html>

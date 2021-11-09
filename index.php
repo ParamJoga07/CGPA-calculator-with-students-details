@@ -263,14 +263,7 @@ table.gridtable td{
 		<?php include("includes/main_table.php");?>
 	</main>
 
-	<footer>
-		<div>
-			<address>
-				encoded by: param<br>
-				copyright &copy; 2021-<?php echo date("Y")?> CGPA Calculator. Alright reserved.
-			</address>
-		</div>
-	</footer>
+	
 
 	<script>
 		$(document).ready(function(){

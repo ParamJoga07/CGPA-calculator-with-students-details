@@ -41,14 +41,15 @@ body {
 
 
 
-h1 {
+h2 {
   font-family: 'times new roman';
-  margin: 0 0 0px 0;
-  font-weight: 300;
-  font-size: 28px;
+  margin: 10px 0 10px 10px;
+  font-weight: 800;
+  font-size: 22px;
   text-align: center;
-  color: white;
+  color: black;
 }
+
 
 
     table {
@@ -103,7 +104,7 @@ input[type="submit1"]:active {
           </style>
 <body>
 
-<h2>RESULTS Table</h2>
+<center><h2>RESULT'S OF 2<sup>nd</sup> YEAR 1<sup>st</sup> SEMESTER</h2></center>
 
 <center><table>
 <thead>
@@ -118,15 +119,16 @@ input[type="submit1"]:active {
   <tr>
     <th>
         <?php 
+                 $c=1;
                  $sql="select * from results";
                  $result= $con->query($sql);
                  while($row = $result->fetch_assoc()) {
                   if($row["s_year"] == 2  && $row["s_semester"] == 1 ){
-                    echo "". $row["s_name"]. ""; 
+                    echo "".$c.""; 
                     echo"<br> ";
-                  } 
+                    $c++;
+                  }
                 }
-  
                 ?>
                 </th>
     <th>
@@ -214,6 +216,6 @@ input[type="submit1"]:active {
 
 <br><br><br>
 <center><label><input type="submit1" value="PRINT" onclick="window.print()"></label></center>
-<center><a href="dashboard.php"><input type="submit1" value="Back to Homepage"><br><br></a></center>
+<<center><a href="/login/dashboard.php"><input type="submit1" value="Back to Homepage"><br><br></a></center>
 </body>
 </html>

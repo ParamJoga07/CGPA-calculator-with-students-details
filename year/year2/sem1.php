@@ -21,7 +21,7 @@ session_start();
 
 		//save to database
 		
-		$query = "insert into students (s_name,s_enroll_no,s_department,s_year,s_semester,s_email_id) values ('$s_name','$s_enroll_no','$s_department','$s_year','$s_semester','$s_email_id')";
+		$query = "insert into students2_1 (s_name,s_enroll_no,s_department,s_year,s_semester,s_email_id) values ('$s_name','$s_enroll_no','$s_department','$s_year','$s_semester','$s_email_id')";
 
 		mysqli_query($con, $query);
 	}else
@@ -260,7 +260,7 @@ table.gridtable td{
 				</table>
 			</center>
 		
-		<?php include("includes/main_table.php");?>
+		<?php include("includes/main_table2_1.php");?>
 	</main>
 
 	<footer>
