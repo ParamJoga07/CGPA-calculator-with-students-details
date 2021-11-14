@@ -217,7 +217,7 @@ table.gridtable td{
 			</div>
 			<h1 class="text text-center">Cumulative grade Point Average<br>(CGPA) Calculator</h1>
 			<div class="right">
-      <a href="dashboard.php"><input type="submit1" value="Back to Homepage"><br><br></a>
+      <a href="/login/dashboard.php"><input type="submit1" value="Back to Homepage"><br><br></a>
 			</div>
 			</div>
 			

@@ -126,7 +126,7 @@ input[type="submit1"]:active {
     <th>
         <?php 
                 $c=1;
-                 $sql="select * from results";
+                 $sql="select * from results1_1";
                  $result= $con->query($sql);
                  while($row = $result->fetch_assoc()) {
                 
@@ -141,7 +141,7 @@ input[type="submit1"]:active {
                 </th>
     <th>
     <?php 
-                 $sql="select * from results";
+                 $sql="select * from results1_1";
                  $result= $con->query($sql);
                  while($row = $result->fetch_assoc()) {
                  
@@ -154,7 +154,7 @@ input[type="submit1"]:active {
     </th>
     <th>
     <?php 
-                 $sql="select * from results";
+                 $sql="select * from results1_1";
                  $result= $con->query($sql);
                  while($row = $result->fetch_assoc()) {
                  
@@ -167,11 +167,11 @@ input[type="submit1"]:active {
     </th>
     <th>
     <?php 
-                 $sql="select * from results";
+                 $sql="select * from results1_1";
                  $result= $con->query($sql);
                  while($row = $result->fetch_assoc()) {
                   if($row["s_year"] == 1  && $row["s_semester"] == 1 ){
-                    echo "". $row["GPA"]. ""; 
+                    echo "". $row["gpa"]. ""; 
                     echo"<br> ";
                   }
                   else{
@@ -184,11 +184,11 @@ input[type="submit1"]:active {
     </th>
     <th>
     <?php 
-                 $sql="select * from results";
+                 $sql="select * from results1_2";
                  $result= $con->query($sql);
                  while($row = $result->fetch_assoc()) {
                   if($row["s_year"] == 1  && $row["s_semester"] == 2 ){
-                    echo "". $row["GPA"]. ""; 
+                    echo "". $row["gpa"]. ""; 
                     echo"<br> ";
                   }
                   else{
@@ -201,11 +201,11 @@ input[type="submit1"]:active {
     </th>
     <th>
     <?php 
-                 $sql="select * from results";
+                 $sql="select * from results2_1";
                  $result= $con->query($sql);
                  while($row = $result->fetch_assoc()) {
                   if($row["s_year"] == 2  && $row["s_semester"] == 1 ){
-                    echo "". $row["GPA"]. ""; 
+                    echo "". $row["gpa"]. ""; 
                     echo"<br> ";
                   }
                   else{
@@ -218,11 +218,11 @@ input[type="submit1"]:active {
     </th>
     <th>
     <?php 
-                 $sql="select * from results";
+                 $sql="select * from results2_2";
                  $result= $con->query($sql);
                  while($row = $result->fetch_assoc()) {
                   if($row["s_year"] == 2  && $row["s_semester"] == 2 ){
-                    echo "". $row["GPA"]. ""; 
+                    echo "". $row["gpa"]. ""; 
                     echo"<br> ";
                   }
                   else{
@@ -235,11 +235,11 @@ input[type="submit1"]:active {
     </th>
     <th>
     <?php 
-                 $sql="select * from results";
+                 $sql="select * from results3_1";
                  $result= $con->query($sql);
                  while($row = $result->fetch_assoc()) {
                   if($row["s_year"] == 3  && $row["s_semester"] == 1 ){
-                    echo "". $row["GPA"]. ""; 
+                    echo "". $row["gpa"]. ""; 
                     echo"<br> ";
                   }
                   else{
@@ -252,11 +252,11 @@ input[type="submit1"]:active {
     </th>
     <th>
     <?php 
-                 $sql="select * from results";
+                 $sql="select * from results3_2";
                  $result= $con->query($sql);
                  while($row = $result->fetch_assoc()) {
                   if($row["s_year"] == 3  && $row["s_semester"] == 2 ){
-                    echo "". $row["GPA"]. ""; 
+                    echo "". $row["gpa"]. ""; 
                     echo"<br> ";
                   }
                   else{
@@ -269,11 +269,11 @@ input[type="submit1"]:active {
     </th>
     <th>
     <?php 
-                 $sql="select * from results";
+                 $sql="select * from results4_1";
                  $result= $con->query($sql);
                  while($row = $result->fetch_assoc()) {
                   if($row["s_year"] == 4  && $row["s_semester"] == 1 ){
-                    echo "". $row["GPA"]. ""; 
+                    echo "". $row["gpa"]. ""; 
                     echo"<br> ";
                   }
                   else{
@@ -286,11 +286,11 @@ input[type="submit1"]:active {
     </th>
     <th>
     <?php 
-                 $sql="select * from results";
+                 $sql="select * from results4_2";
                  $result= $con->query($sql);
                  while($row = $result->fetch_assoc()) {
                   if($row["s_year"] == 4  && $row["s_semester"] == 2 ){
-                    echo "". $row["GPA"]. ""; 
+                    echo "". $row["gpa"]. ""; 
                     echo"<br> ";
                   }
                   else{

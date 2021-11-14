@@ -19,6 +19,7 @@ session_start();
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link href='https://fonts.googleapis.com/css?family=Cookie' rel='stylesheet'>
    </head>
    <title> CGPA CALCULATOR</title>
    <style>
@@ -32,6 +33,14 @@ session_start();
   box-sizing: border-box;
   font-family: "Poppins" , sans-serif;
 }
+
+h1{
+  margin-left:15px;
+  font-family:'Cookie';
+  font-size: 50px;
+  font-weight:400px;
+}
+
 .sidebar{
   position: fixed;
   left: 0;
@@ -280,9 +289,8 @@ session_start();
   background: none;
 }
 .home-section{
-  position: relative;
-  background-color: #2d3436;
-  background-image: linear-gradient(315deg, #2d3436 0%, #d3d3d3 74%);
+  position: relative; 
+  background-image: url('media/calcbg.jpg');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -429,8 +437,8 @@ img.center{
   </div>
   <section class="home-section">
   
-      <div class="text">CGPA CALUCLATION</div>
-     
+     <h1>Cgpa Caluclation</h1>
+      
   </section>
   <script>
   let sidebar = document.querySelector(".sidebar");

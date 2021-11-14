@@ -155,6 +155,23 @@ input[type="password"]:focus {
   color: #16a085;
   transition: 0.2s ease;
 }
+select{
+	
+	margin-bottom: 0px;
+		padding: 0px;
+		margin-left:40px;
+		width: 220px;  
+		height: 30px; 
+		border: none;  
+		border-radius: 10px;  
+		padding-left: 0px;  
+		border-bottom: 0px solid #AAA;
+		font-family: 'times new roman';
+		font-weight: 600;
+		font-size: 15px;
+		text-align:center;
+		
+}
 </style>
 
 			<center>
@@ -224,7 +241,7 @@ input[type="password"]:focus {
 							<tr class="datarow">
 								<td class="sn">7</td>
 								<td><input type="text" name="course_code_7" placeholder="Enter the course Code" value="TA115"></td>
-								<td><input type="text" name="course_name_7" placeholder="Enter the course name" value="Engineering Graphics"></td>
+								<td><input type="text" name="course_name_7" placeholder="Enter the course name" value="Engineering Graphics"></td>	
 								<td><input type="text" name="course_unit_7" placeholder="Enter the course unit" value="4"></td>
 								<td><input type="text" name="course_grade_7" placeholder="Enter the course grade"></td>
 							</tr>

@@ -19,7 +19,23 @@ td{
 	border: 0;	
 }
 
-
+select{
+	
+	margin-bottom: 0px;
+		padding: 0px;
+		margin-left:40px;
+		width: 220px;  
+		height: 30px; 
+		border: none;  
+		border-radius: 10px;  
+		padding-left: 0px;  
+		border-bottom: 0px solid #AAA;
+		font-family: 'times new roman';
+		font-weight: 600;
+		font-size: 15px;
+		text-align:center;
+		transition: 0.2s ease;
+}
 
 input[type="text"]{
 		margin-bottom: 0px;
@@ -216,15 +232,40 @@ input[type="password"]:focus {
 							</tr>
 							<tr class="datarow">
 								<td class="sn">6</td>
-								<td><input type="text" name="course_code_6" placeholder="Enter the course Code" value="DS211"></td>
-								<td><input type="text" name="course_name_6" placeholder="Enter the course name" value="Discrete Structures for Computers"></td>
+								<td><center>
+								<select id="courses" name="courses">
+								<option value="CS211">CS211</option>
+								<option value="EC211">EC211</option>
+								<option value="MEC211">MEC211</option>
+								</select></center>
+								</td>
+								<td>
+								<center>
+								<select id="courses" name="courses">
+								<option value="Discrete Structures for Computers">Discrete Structures for Computers</option>
+								<option value="Signals & Systems">Signals & Systems</option>
+								<option value="Elements of Mechratronics">Elements of Mechratronics</option>
+								</select></center>
+								</td>
 								<td><input type="text" name="course_unit_6" placeholder="Enter the course unit" value="3"></td>
 								<td><input type="text" name="course_grade_6" placeholder="Enter the course grade"></td>
 							</tr>
 							<tr class="datarow">
 								<td class="sn">7</td>
-								<td><input type="text" name="course_code_7" placeholder="Enter the course Code"  value="MGTS224"></td>
-								<td><input type="text" name="course_name_7" placeholder="Enter the course name"  value="Principle Of Management"></td>
+								<td>
+								<center>
+								<select id="courses" name="courses">
+								<option value="MGTS224">MGTS224</option>
+								<option value="ECON214">ECON214</option>
+								</select></center>
+								</td>
+								<td>
+								<center>
+								<select id="courses" name="courses">
+								<option value="Principle Of Management">Principle Of Management</option>
+								<option value="Principles of Economics">Principles of Economics</option>
+								</select></center>
+								</td>
 								<td><input type="text" name="course_unit_7" placeholder="Enter the course unit"  value="3"></td>
 								<td><input type="text" name="course_grade_7" placeholder="Enter the course grade"></td>
 							</tr>

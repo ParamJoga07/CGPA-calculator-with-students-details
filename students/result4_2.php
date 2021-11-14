@@ -368,7 +368,7 @@ input[type="submit1"]:active {
                
         </div>
         <div class="or">
-        <a href="dashboard.php"><input type="submit1" value="Back to Homepage"><br><br></a>
+        <a href="/login/dashboard.php"><input type="submit1" value="Back to Homepage"><br><br></a>
         <center><b>______________________________________________________________________</b><br></center>
             
 

@@ -17,6 +17,7 @@ session_start();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <title>Results</title>
 </head>
 <style>
@@ -39,7 +40,10 @@ body {
   font-weight: 300;
 }
 
-
+i{
+  margin-left: 10px;
+  font-size: 22px;
+ }
 
 h2 {
   font-family: 'times new roman';
@@ -69,6 +73,61 @@ td, th {
 
 tr:nth-child(even) {
   background-color: black;
+}
+
+
+
+input[type="submit"] {
+  margin-top: 20px;
+  width: 120px;
+  height: 32px;
+  margin-left: 15px;
+  background: #16a085;
+  border: none;
+  text-align: center;
+  border-radius: 17px;  
+  padding-left: 7px;  
+  color: #FFF;
+  font-family: 'times new roman';
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: 0.1s ease;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover,
+input[type="submit"]:focus {
+  opacity: 0.8;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  transition: 0.1s ease;
+}
+
+input[type="submit"]:active {
+  opacity: 1;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  transition: 0.1s ease;
+}
+input[type="text"]{
+		margin-bottom: 0px;
+		padding: 0px;
+		width: 220px;  
+		height: 30px; 
+		border: none; 
+		align:"left"; 
+		border-radius: 10px;  
+		padding-left: 0px;  
+		border-bottom: 0px solid #AAA;
+		font-family: 'times new roman';
+		font-weight: 600;
+		font-size: 12px;
+		text-align:center;
+		transition: 0.2s ease;
+	}
+
+	input[type="text"]:focus{
+     border-bottom: 2px solid #16a085;
+  	 color: #16a085;
+  	 transition: 0.2s ease;
 }
 
 input[type="submit1"] {
@@ -105,6 +164,11 @@ input[type="submit1"]:active {
 <body>
 
 <center><h2>RESULT'S OF 2<sup>nd</sup> YEAR 1<sup>st</sup> SEMESTER</h2></center>
+<form method="post" action="search/search2_1.php">
+  <i class='bx bx-search' ></i>
+  <input type="text" name="enroll_no" placeholder="ENTER ENROLL NO" value=""></td>
+  <input type="submit" value="SEARCH"></div><br><br>
+</form>
 
 <center><table>
 <thead>
@@ -120,7 +184,7 @@ input[type="submit1"]:active {
     <th>
         <?php 
                  $c=1;
-                 $sql="select * from results";
+                 $sql="select * from results2_1";
                  $result= $con->query($sql);
                  while($row = $result->fetch_assoc()) {
                   if($row["s_year"] == 2  && $row["s_semester"] == 1 ){
@@ -133,7 +197,7 @@ input[type="submit1"]:active {
                 </th>
     <th>
     <?php 
-                 $sql="select * from results";
+                 $sql="select * from results2_1";
                  $result= $con->query($sql);
                  while($row = $result->fetch_assoc()) {
                   if($row["s_year"] == 2  && $row["s_semester"] == 1 ){
@@ -146,7 +210,7 @@ input[type="submit1"]:active {
     </th>
     <th>
     <?php 
-                 $sql="select * from results";
+                 $sql="select * from results2_1";
                  $result= $con->query($sql);
                  while($row = $result->fetch_assoc()) {
                   if($row["s_year"] == 2  && $row["s_semester"] == 1 ){
@@ -159,7 +223,7 @@ input[type="submit1"]:active {
     </th>
     <th>
     <?php 
-                 $sql="select * from results";
+                 $sql="select * from results2_1";
                  $result= $con->query($sql);
                  while($row = $result->fetch_assoc()) {
                   if($row["s_year"] == 2  && $row["s_semester"] == 1 ){
@@ -172,7 +236,7 @@ input[type="submit1"]:active {
     </th>
     <th>
     <?php 
-                 $sql="select * from results";
+                 $sql="select * from results2_1";
                  $result= $con->query($sql);
                  while($row = $result->fetch_assoc()) {
                   if($row["s_year"] == 2  && $row["s_semester"] == 1 ){
@@ -185,7 +249,7 @@ input[type="submit1"]:active {
     </th>
     <th>
     <?php 
-                 $sql="select * from results";
+                 $sql="select * from results2_1";
                  $result= $con->query($sql);
                  while($row = $result->fetch_assoc()) {
                   if($row["s_year"] == 2  && $row["s_semester"] == 1 ){
@@ -198,11 +262,11 @@ input[type="submit1"]:active {
     </th>
     <th>
     <?php 
-                 $sql="select * from results";
+                 $sql="select * from results2_1";
                  $result= $con->query($sql);
                  while($row = $result->fetch_assoc()) {
                   if($row["s_year"] == 2  && $row["s_semester"] == 1 ){
-                    echo "". $row["GPA"]. ""; 
+                    echo "". $row["gpa"]. ""; 
                     echo"<br> ";
                   }
                 }

@@ -17,6 +17,7 @@ session_start();
     <link rel="stylesheet" href="style.css">
     <!-- Boxicons CDN Link -->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Cookie' rel='stylesheet'>
     
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
    </head>
@@ -294,6 +295,13 @@ session_start();
   animation-timing-function: linear;
   animation-delay: 2s;
 }
+
+h1{
+  margin-left:15px;
+  font-family:'Cookie';
+  font-size: 50px;
+  font-weight:400px;
+}
    </style>
 <body>
   <div class="sidebar">
@@ -360,7 +368,7 @@ session_start();
   </div>
   <section class="home-section">
   
-      <div class="text"><i class='bx bx-home' ></i>ome Page</div>
+     <h1>Home Page</h1>
       <img class="center" src="media\newlogo.gif" width="350">
       
   </section>

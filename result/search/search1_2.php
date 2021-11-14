@@ -5,10 +5,20 @@ session_start();
 	  include("functions.php");
 
     $user_data = check_login($con);
-
-    $sql="select * from results1_1";
-
-    $result= $con->query($sql);
+    if($_SERVER['REQUEST_METHOD'] == "POST")
+	{
+	  $enroll_no = $_POST['enroll_no'];
+      if(!empty($enroll_no) )
+      {
+          //save to database
+          $query = "update search set enroll_no='$enroll_no'";
+  
+          mysqli_query($con, $query);
+      }else
+      {
+          
+      }
+ }  
 ?>
 
 <!DOCTYPE html>
@@ -171,12 +181,7 @@ input[type="text"]{
 </style>
 <body>
 
-<center><h2>RESULT'S OF 1<sup>st</sup> YEAR 1<sup>st</sup> SEMESTER</h2></center>
-<form method="post" action="search/search.php">
-  <i class='bx bx-search' ></i>
-  <input type="text" name="enroll_no" placeholder="ENTER ENROLL NO" value=""></td>
-  <input type="submit" value="SEARCH"></div><br><br>
-</form>
+<center><h2>RESULT'S OF 1<sup>st</sup> YEAR 2<sup>nd</sup> SEMESTER</h2></center>
 
 <center><table>
 <thead>
@@ -192,92 +197,124 @@ input[type="text"]{
     <th>
         <?php 
                  $c=1;
-                 $sql="select * from results1_1";
+                 $sql="select * from results1_2";
                  $result= $con->query($sql);
                  while($row = $result->fetch_assoc()) {
+                    $sql2="select * from search";
+                    $result2= $con->query($sql2);
+                    while($row = $result->fetch_assoc()) {
+                   
+                     if($row["s_enroll_no"]==$enroll_no){
                  
                     echo "".$c.""; 
                     echo"<br> ";
                     $c++;
-                  
-                }
+                     }
+                 }
+                
+              }
   
                 ?>
                 </th>
     <th>
     <?php 
-                 $sql="select * from results1_1";
+                 $sql="select * from results1_2";
                  $result= $con->query($sql);
                  while($row = $result->fetch_assoc()) {
-                 
+                  $sql2="select * from search";
+                  $result2= $con->query($sql2);
+                  while($row = $result->fetch_assoc()) {
+                    if($row["s_enroll_no"]==$enroll_no){
                     echo "". $row["s_name"]. ""; 
                     echo"<br> ";
-                  
+                    }
                 }
+              }
   
                 ?>
     </th>
     <th>
     <?php 
-                 $sql="select * from results1_1";
+                 $sql="select * from results1_2";
                  $result= $con->query($sql);
                  while($row = $result->fetch_assoc()) {
-                  
+                  $sql2="select * from search";
+                  $result2= $con->query($sql2);
+                  while($row = $result->fetch_assoc()) {
+                    if($row["s_enroll_no"]==$enroll_no){
                     echo "". $row["s_enroll_no"]. ""; 
                     echo"<br> ";
-                  
+                    }
                 }
+              }
   
                 ?>
     </th>
     <th>
     <?php 
-                 $sql="select * from results1_1";
+                 $sql="select * from results1_2";
                  $result= $con->query($sql);
                  while($row = $result->fetch_assoc()) {
-                  
+                  $sql2="select * from search";
+                  $result2= $con->query($sql2);
+                  while($row = $result->fetch_assoc()) {
+                    if($row["s_enroll_no"]==$enroll_no){
                     echo "". $row["s_year"]. ""; 
                     echo"<br> ";
-                  
+                    }
                 }
+              }
   
                 ?>
     </th>
     <th>
     <?php 
-                 $sql="select * from results1_1";
+                 $sql="select * from results1_2";
                  $result= $con->query($sql);
                  while($row = $result->fetch_assoc()) {
-                  
+                  $sql2="select * from search";
+                  $result2= $con->query($sql2);
+                  while($row = $result->fetch_assoc()) {
+                    if($row["s_enroll_no"]==$enroll_no){
                     echo "". $row["s_semester"]. ""; 
                     echo"<br> ";
-                  
+                    }
                 }
+              }
   
                 ?>
     </th>
     <th>
     <?php 
-                 $sql="select * from results1_1";
+                 $sql="select * from results1_2";
                  $result= $con->query($sql);
                  while($row = $result->fetch_assoc()) {
-                  
+                  $sql2="select * from search";
+                  $result2= $con->query($sql2);
+                  while($row = $result->fetch_assoc()) {
+                    if($row["s_enroll_no"]==$enroll_no){
                     echo "". $row["s_department"]. ""; 
                     echo"<br> ";
-                  
+                    }
                 }
+              }
   
                 ?>
     </th>
     <th>
     <?php 
-                 $sql="select * from results1_1";
+                 $sql="select * from results1_2";
                  $result= $con->query($sql);
                  while($row = $result->fetch_assoc()) {
+                  $sql2="select * from search";
+                  $result2= $con->query($sql2);
+                  while($row = $result->fetch_assoc()) {
+                    if($row["s_enroll_no"]==$enroll_no){
                     echo "". $row["gpa"]. ""; 
                     echo"<br> ";
-                  
+                    }
                 }
+              }
   
                 ?>
     </th>

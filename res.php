@@ -17,6 +17,7 @@ session_start();
     <link rel="stylesheet" href="style.css">
     <!-- Boxicons CDN Link -->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Dancing Script' rel='stylesheet'>
     
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
    </head>
@@ -279,10 +280,17 @@ session_start();
   width: 50px;
   background: none;
 }
+
+h1{
+  margin-left:15px;
+  font-family:'Dancing Script';
+  font-size: 40px;
+  font-weight:400px;
+}
+
 .home-section{
   position: relative;
-  background-color: #2d3436;
-  background-image: linear-gradient(315deg, #2d3436 0%, #d3d3d3 74%);
+  background-image: url('media/res1.jpg');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -352,6 +360,7 @@ img.center{
        	  margin: 0 auto;
 			    line-height:0;
 		    	vertical-align: top;
+          opacity: 0.95;
  	   }
       
    </style>
@@ -436,8 +445,8 @@ img.center{
   </div>
   <section class="home-section">
   
-      <div class="text">Result's Page</div>
-      <img class="center" src="https://crestcom.com/wp-content/uploads/sites/4/2019/06/AdobeStock_102031676_300px.jpg" width="600">
+     <h1>Result's Page</h1>
+     
       
   </section>
   <script>

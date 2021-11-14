@@ -134,23 +134,6 @@ tr.breakrow{
     color: black;
     
 }
-select{
-	
-	margin-bottom: 0px;
-		padding: 0px;
-		margin-left:40px;
-		width: 220px;  
-		height: 30px; 
-		border: none;  
-		border-radius: 10px;  
-		padding-left: 0px;  
-		border-bottom: 0px solid #AAA;
-		font-family: 'times new roman';
-		font-weight: 600;
-		font-size: 15px;
-		text-align:center;
-		
-}
 input[type="text4"] {
   display: block;
   box-sizing: border-box; 
@@ -175,12 +158,12 @@ input[type="password"]:focus {
 </style>
 
 			<center>
-				<form action="/login/students/result1_2.php" method="post">
+				<form action="result.php" method="post">
 				<table class="gridtable1" >
 				<label class="labels">Enrollment Number</label>
                 <input type="text4" name="s_enroll_no" placeholder="Student's Enrollment Number" />
 					
-					<!--form method="post" action="/login/students/result1_2.php"-->
+					<!--form method="post" action="result.php"-->
 						<thead>
 							<th>S/N</th>
 							<th>COURSE CODE</th>
@@ -196,53 +179,53 @@ input[type="password"]:focus {
 							</td>
 						</tr>
 				
-						<tr class="datarow">
+							<tr class="datarow">
 								<td class="sn">1</td>
-								<td><input type="text" name="course_code_1" placeholder="Enter the course Code" value="AO121"></td>
-								<td><input type="text" name="course_name_1" placeholder="Enter the course name" value="Probability & Statistics"></td>
-								<td><input type="text" name="course_unit_1" placeholder="Enter the course unit" value="2">></td>
+								<td><input type="text" name="course_code_1" placeholder="Enter the course Code"></td>
+								<td><input type="text" name="course_name_1" placeholder="Enter the course name"></td>
+								<td><input type="text" name="course_unit_1" placeholder="Enter the course unit"></td>
 								<td><input type="text" name="course_grade_1" placeholder="Enter the course grade"></td>
 							</tr>
 							<tr class="datarow">
 								<td class="sn">2</td>
-								<td><input type="text" name="course_code_2" placeholder="Enter the course Code" value="ES121">></td>
-								<td><input type="text" name="course_name_2" placeholder="Enter the course name" value="Thermodynamics">></td>
-								<td><input type="text" name="course_unit_2" placeholder="Enter the course unit" value="3">></td>
+								<td><input type="text" name="course_code_2" placeholder="Enter the course Code"></td>
+								<td><input type="text" name="course_name_2" placeholder="Enter the course name"></td>
+								<td><input type="text" name="course_unit_2" placeholder="Enter the course unit"></td>
 								<td><input type="text" name="course_grade_2" placeholder="Enter the course grade"></td>
 							</tr>
 							<tr class="datarow">
 								<td class="sn">3</td>
-								<td><input type="text" name="course_code_3" placeholder="Enter the course Code" value="MATH123"></td>
-								<td><input type="text" name="course_name_3" placeholder="Enter the course name" value="Higher Calculus"></td>
-								<td><input type="text" name="course_unit_3" placeholder="Enter the course unit" value="3"></td>
+								<td><input type="text" name="course_code_3" placeholder="Enter the course Code"></td>
+								<td><input type="text" name="course_name_3" placeholder="Enter the course name"></td>
+								<td><input type="text" name="course_unit_3" placeholder="Enter the course unit"></td>
 								<td><input type="text" name="course_grade_3" placeholder="Enter the course grade"></td>
 							</tr>
 							<tr class="datarow">
 								<td class="sn">4</td>
-								<td><input type="text" name="course_code_4" placeholder="Enter the course Code" value="PHY124"></td>
-								<td><input type="text" name="course_name_4" placeholder="Enter the course name" value="Physics II"></td>
-								<td><input type="text" name="course_unit_4" placeholder="Enter the course unit" value="3"></td>
+								<td><input type="text" name="course_code_4" placeholder="Enter the course Code"></td>
+								<td><input type="text" name="course_name_4" placeholder="Enter the course name"></td>
+								<td><input type="text" name="course_unit_4" placeholder="Enter the course unit"></td>
 								<td><input type="text" name="course_grade_4" placeholder="Enter the course grade"></td>
 							</tr>
 							<tr class="datarow">
 								<td class="sn">5</td>
-								<td><input type="text" name="course_code_5" placeholder="Enter the course Code" value="TA127"></td>
-								<td><input type="text" name="course_name_5" placeholder="Enter the course name" value="Computer Programming II"></td>
-								<td><input type="text" name="course_unit_5" placeholder="Enter the course unit" value="3"></td>
+								<td><input type="text" name="course_code_5" placeholder="Enter the course Code"></td>
+								<td><input type="text" name="course_name_5" placeholder="Enter the course name"></td>
+								<td><input type="text" name="course_unit_5" placeholder="Enter the course unit"></td>
 								<td><input type="text" name="course_grade_5" placeholder="Enter the course grade"></td>
 							</tr>
 							<tr class="datarow">
 								<td class="sn">6</td>
-								<td><input type="text" name="course_code_6" placeholder="Enter the course Code" value="TA125"></td>
-								<td><input type="text" name="course_name_6" placeholder="Enter the course name" value="Scientific Measurements"></td>
-								<td><input type="text" name="course_unit_6" placeholder="Enter the course unit" value="3"></td>
+								<td><input type="text" name="course_code_6" placeholder="Enter the course Code"></td>
+								<td><input type="text" name="course_name_6" placeholder="Enter the course name"></td>
+								<td><input type="text" name="course_unit_6" placeholder="Enter the course unit"></td>
 								<td><input type="text" name="course_grade_6" placeholder="Enter the course grade"></td>
 							</tr>
 							<tr class="datarow">
 								<td class="sn">7</td>
-								<td><input type="text" name="course_code_7" placeholder="Enter the course Code" value="TA126"></td>
-								<td><input type="text" name="course_name_7" placeholder="Enter the course name" value="Workshop Practice"></td>
-								<td><input type="text" name="course_unit_7" placeholder="Enter the course unit"  value="4"></td>
+								<td><input type="text" name="course_code_7" placeholder="Enter the course Code"></td>
+								<td><input type="text" name="course_name_7" placeholder="Enter the course name"></td>
+								<td><input type="text" name="course_unit_7" placeholder="Enter the course unit"></td>
 								<td><input type="text" name="course_grade_7" placeholder="Enter the course grade"></td>
 							</tr>
 						</tbody>
